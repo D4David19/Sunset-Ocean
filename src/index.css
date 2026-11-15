@@ -1,0 +1,179 @@
+@import "tailwindcss";
+
+:root {
+  --font-display: 'Outfit', system-ui, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --hud-bg: rgba(9, 13, 28, 0.84);
+  --hud-surface: rgba(255, 255, 255, 0.08);
+  --hud-border: rgba(255, 255, 255, 0.14);
+  --hud-text: #f8fafc;
+  --hud-muted: #94a3b8;
+  --accent: #fbbf24;
+  --accent-fg: #090d16;
+  --stage-glow: rgba(251, 191, 36, 0.22);
+  --surround-a: #070b18;
+  --surround-b: #111827;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  background-color: #070b18;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono-num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.font-epic {
+  font-family: var(--font-display);
+}
+
+.font-verse {
+  font-family: var(--font-sans);
+}
+
+/* Strict 16:9 / 21:9 Stage Lock on Desktop, Full-Screen Responsive Stage on Mobile */
+.stage-frame-16-9 {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  width: min(100vw, calc(100dvh * 16 / 9));
+  height: min(100dvh, calc(100vw * 9 / 16));
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.stage-frame-21-9 {
+  position: relative;
+  aspect-ratio: 21 / 9;
+  width: min(100vw, calc(100dvh * 21 / 9));
+  height: min(100dvh, calc(100vw * 9 / 21));
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.stage-frame-fill {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+@media (max-width: 767px), ((max-width: 1024px) and (orientation: portrait)) {
+  .stage-frame-16-9,
+  .stage-frame-21-9 {
+    aspect-ratio: auto;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.stage-frame-16-9 canvas,
+.stage-frame-21-9 canvas,
+.stage-frame-fill canvas {
+  object-fit: contain;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.cursor-idle-hidden,
+.cursor-idle-hidden * {
+  cursor: none !important;
+}
+
+/* Architectural Grid Surround Background */
+.surround-grid-pattern {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+/* Subtle custom range styling */
+input[type='range'].studio-range {
+  accent-color: var(--accent);
+}
+
+/* Swiss Sports Daylight Skin High-Contrast Overrides */
+.hud-swiss {
+  color: #0f172a;
+}
+.hud-swiss .text-white,
+.hud-swiss .text-slate-100,
+.hud-swiss .text-slate-200,
+.hud-swiss .text-amber-50,
+.hud-swiss .text-emerald-50,
+.hud-swiss .text-emerald-100,
+.hud-swiss .text-cyan-50,
+.hud-swiss .text-sky-50 {
+  color: #0f172a !important;
+}
+.hud-swiss .text-slate-300,
+.hud-swiss .text-slate-400 {
+  color: #475569 !important;
+}
+.hud-swiss .text-amber-100,
+.hud-swiss .text-amber-200,
+.hud-swiss .text-amber-300,
+.hud-swiss .text-amber-200\/85,
+.hud-swiss .text-amber-300\/90 {
+  color: #b45309 !important;
+}
+.hud-swiss .text-emerald-200,
+.hud-swiss .text-emerald-300,
+.hud-swiss .text-emerald-400 {
+  color: #047857 !important;
+}
+.hud-swiss .text-cyan-200,
+.hud-swiss .text-cyan-300,
+.hud-swiss .text-sky-200,
+.hud-swiss .text-sky-300 {
+  color: #0369a1 !important;
+}
+.hud-swiss .text-rose-200,
+.hud-swiss .text-rose-300 {
+  color: #be123c !important;
+}
+.hud-swiss .bg-white\/8,
+.hud-swiss .bg-white\/5,
+.hud-swiss .bg-white\/10 {
+  background-color: rgba(15, 23, 42, 0.07) !important;
+}
+.hud-swiss .border-white\/15,
+.hud-swiss .border-white\/10,
+.hud-swiss .border-amber-300\/15,
+.hud-swiss .border-amber-300\/20,
+.hud-swiss .border-emerald-300\/20,
+.hud-swiss .border-cyan-300\/20 {
+  border-color: rgba(15, 23, 42, 0.16) !important;
+}
+.hud-swiss .hover\:bg-white\/10:hover,
+.hud-swiss .hover\:bg-white\/15:hover {
+  background-color: rgba(15, 23, 42, 0.1) !important;
+}
+

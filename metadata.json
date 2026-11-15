@@ -1,0 +1,6 @@
+{
+  "name": "Sunset Ocean",
+  "description": "A seamless, self-running ocean sunset animation with multi-speed rolling waves, broken wave-slope sun reflections, and a shifting sky color loop.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
