@@ -1,0 +1,28 @@
+{
+  "background_color": "#ffffff",
+  "description": "An interactive 16:9 arcade and ambient showcase featuring Jungle Temple, Sunset Cove, Coast to Coast Road Trip, Slingshot Valley, and Full-Court Hoops with 79 theme presets and Idle Auto Tour.",
+  "dir": "auto",
+  "display": "fullscreen",
+  "name": "gleeful-klepon-8e5248.netlify",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "gleeful-klepon-8e5248.netlify",
+  "start_url": "/https://gleeful-klepon-8e5248.netlify.app/",
+  "theme_color": "#070b18",
+  "icons": [
+    {
+      "src": "https://gleeful-klepon-8e5248.netlify.app/favicon.ico",
+      "type": "image/x-icon",
+      "isSquare": false,
+      "isPng": false,
+      "isWebp": false,
+      "isJpg": false,
+      "width": 0,
+      "is512x512": false,
+      "is256x256": false,
+      "is192x192": false
+    }
+  ],
+  "id": "id",
+  "lang": "en"
+}
